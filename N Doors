@@ -34,3 +34,34 @@ function getFinalOpenedDoors (numDoors) {
 }
 
 
+
+
+
+/*
+This is the same problem but with a solution based on the square rule.
+I should note that you actually don't need to set the variables to false or true unless you need the actual information.
+*/
+
+
+function getFinalOpenedDoors (numDoors) {
+  // Good luck!
+  var openedDoors=[];
+  //create Doors
+  var differentDoor=[];
+  for(var i=1; i<=numDoors; i++){
+     openedDoors[i]=false;  
+  }
+
+  for(var i=1; Math.pow(i,2) <= numDoors; i++){
+      openedDoors[Math.pow(i,2)] = true;
+      differentDoor.push(Math.pow(i,2));
+    }
+  return differentDoor;
+}
+
+
+
+
+
+
+
