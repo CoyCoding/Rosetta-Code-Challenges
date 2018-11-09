@@ -1,0 +1,36 @@
+/*
+There are N doors in a row that are all initially closed. 
+You make N passes by the doors. The first time through, visit every door and 'toggle' the door (if the door is closed, open it; if it is open, close it). 
+The second time, only visit every 2nd door (i.e., door #2, #4, #6, ...) and toggle it. 
+The third time, visit every 3rd door (i.e., door #3, #6, #9, ...), etc., until you only visit the Nth door.
+
+
+Implement a function to determine the state of the doors after the last pass. 
+Return the final result in an array, with only the door number included in the array if it is open.
+
+*/
+
+function getFinalOpenedDoors (numDoors) {
+  // Good luck!
+  var openedDoors=[];
+  var returnDoors= [];
+  //create Doors
+  for(var i=1; i<=numDoors; i++){
+     openedDoors[i]=false;  
+  }
+  //
+  for(var i=1; i <= numDoors; i++){    
+    for(var j=i ; j <= numDoors; j+=i){    
+      openedDoors[j] = !openedDoors[j]; //toggle doors
+    }  
+  } 
+  for(var i=1; i <= numDoors; i++) {     //read doors
+      if(openedDoors[i]){
+        console.log(i);
+        differentDoor.push(i);
+      }
+}
+  return returnDoors;
+}
+
+
